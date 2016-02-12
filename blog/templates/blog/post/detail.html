@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+<figure>
+<img src="{% if post.image %}{{ post.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" />
+<figcaption>{{ post.title }}</figcaption></figure>
+<h1>{{ post.title }}</h1>
+<p class="date">
+Publié le {{ post.publish }} par <span class="auteur">{{ post.author }}</span>
+</p>
+{{ post.body|linebreaks }}
+{% endblock %}
