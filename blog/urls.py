@@ -5,7 +5,8 @@ from . import views
 urlpatterns = [
 	# post views
 	url(r'^$', views.post_list, name='post_list'),
-	url(r'^tag/tag/(?P<tag_slug>[-\w]+)/$', views.post_list, name='post_list_by_tag'),
+	#tag view
+	url(r'^tag/(?P<tag_slug>[-\w]+)/$', views.post_list, name='post_list_by_tag'),
 	#class view
 	#url(r'^$', views.PostListView.as_view(), name='post_list'),
 	url(r'^(?P<year>\d{4})/(?P<month>\d{2})/(?P<day>\d{2})/'\
